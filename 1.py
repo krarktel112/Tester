@@ -8,7 +8,7 @@ tempfile.tempdir = '/home/user/my_tmp'
 #logging.basicConfig()
 #logging.getLogger().setLevel(logging.DEBUG)
 
-firefox_bin = "/snap/firefox/current/usr/lib/firefox/firefox"
+firefox_bin = "/snap/firefox/current/usr/lib/firefox"
 firefoxdriver_bin = "/snap/firefox/current/usr/lib/firefox/geckodriver"
 
 options = webdriver.FirefoxOptions()
