@@ -13,7 +13,7 @@ firefoxdriver_bin = "/snap/firefox/current/usr/lib/firefox/geckodriver"
 
 options = webdriver.FirefoxOptions()
 options.add_argument('--headless')
-options.binary_location = firefox_bin
+#options.binary_location = firefox_bin
 
 service = webdriver.firefox.service.Service(executable_path=firefoxdriver_bin)
 
