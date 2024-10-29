@@ -1,5 +1,6 @@
 import logging
 import selenium.webdriver
+from selenium import webdriver
 import selenium.webdriver.firefox.service
 import tempfile
 tempfile.tempdir = '/home/user/my_tmp'
