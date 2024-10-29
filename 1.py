@@ -8,7 +8,7 @@ tempfile.tempdir = "/snap/firefox/current/usr/lib/firefox/firefox"
 #logging.basicConfig()
 #logging.getLogger().setLevel(logging.DEBUG)
 
-firefox_bin = "/snap/firefox/current/usr/lib/firefox/firefox"
+firefox_bin = "/usr/bin/firefox"
 firefoxdriver_bin = "/snap/firefox/current/usr/lib/firefox/geckodriver"
 
 options = webdriver.FirefoxOptions()
@@ -17,7 +17,7 @@ options.binary_location = firefox_bin
 
 service = webdriver.firefox.service.Service(executable_path=firefoxdriver_bin)
 
-#browser = webdriver.Firefox(options=options)
+browser = webdriver.Firefox(options=options)
 browser = webdriver.Firefox(service=service, options=options)
 browser.get("https://www.facebook.com")
 #import logging
