@@ -17,6 +17,7 @@ options.binary_location = firefox_bin
 
 service = webdriver.firefox.service.Service(executable_path=firefoxdriver_bin)
 
+browser = webdriver.Firefox(options=options)
 browser = webdriver.Firefox(service=service, options=options)
 browser.get("https://www.facebook.com")
 #import logging
