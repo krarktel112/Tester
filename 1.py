@@ -15,7 +15,7 @@ options = webdriver.FirefoxOptions()
 options.add_argument('--headless')
 #options.binary_location = firefox_bin
 
-service = Service(executable_path=firefoxdriver_bin)
+service = webdriver.firefox.Service(executable_path=firefoxdriver_bin)
 
 browser = webdriver.Firefox(service=service, options=options)
 browser.get("https://www.facebook.com")
