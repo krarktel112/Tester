@@ -49,6 +49,15 @@ def fb_hack(email, codex, respect):
   search_box = driver.find_element(by = By.ID, value = "identify_email")
   search_box.send_keys(email)
   search_box.submit()
+  html = driver.page_source
+  soup = BeautifulSoup(html, 'html.parser')
+  with open("output1.txt", "w") as file:
+    file.write(str(soup))
+  source_file = "output1.txt" 
+  destination_folder = "/sdcard/download/screenshot.png" 
+  
+  shutil.move(source_file, destination_folder)
+  x = input("x")
   #element = wait.until(EC.visibility_of_element_located(by = By.NAME, value = "tryanotherway"))
   search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
   search_button.click()
