@@ -52,7 +52,7 @@ def fb_hack(email, codex, respect):
   search_box.send_keys(email)
   search_button = driver.find_element(by = By.ID, value = "did_submit")
   ac = ActionChains(driver)
-  ac.send_keys(keys.ENTER)
+  ac.send_keys(Keys.ENTER)
   sleep(2)
   driver.save_screenshot("/sdcard/download/tester.png")
   
