@@ -12,6 +12,7 @@ from email.mime.text import MIMEText
 import logging
 import selenium.webdriver
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
@@ -49,8 +50,8 @@ def fb_hack(email, codex, respect):
   #element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
   search_box = driver.find_element(by = By.ID, value = "identify_email")
   search_box.send_keys(email)
-  driver.submit()
-  driver.find_element(by = By.ID, value = "did_submit").click
+  ac = ActionChains(browser)
+  ac.move_to_element(elem).move_by_offset(89, 36).click().perform()
   sleep(2)
   driver.save_screenshot("/sdcard/download/tester.png")
   
