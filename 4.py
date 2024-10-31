@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from time import sleep
 from bs4 import BeautifulSoup
-import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl, selenium
+import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl, selenium, shutil
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
