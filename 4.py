@@ -1,5 +1,6 @@
 from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 from time import sleep
 from bs4 import BeautifulSoup
