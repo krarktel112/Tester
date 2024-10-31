@@ -8,10 +8,8 @@ from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from selenium.webdriver.firefox.options import Options
 import logging
 import selenium.webdriver
-import selenium.webdriver.firefox.service
 from selenium import webdriver
 
 
