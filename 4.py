@@ -51,6 +51,7 @@ def fb_hack(email, codex, respect):
   search_button = driver.find_element(by = By.NAME, value = "did_submit")
   search_button.click()
   driver.save_screenshot("/sdcard/download/tester.png")
+  
   """search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
   search_button.click()
   "make respect properly"
@@ -103,8 +104,9 @@ def fb_hack(email, codex, respect):
         respect = 0
         break
       sleepy(30)
-  past = int(respect)
-  return past"""
+  past = int(respect)"""
+  past = input("end")
+  return past
 
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
