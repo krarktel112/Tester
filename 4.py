@@ -50,8 +50,7 @@ def fb_hack(email, codex, respect):
   search_box = driver.find_element(by = By.ID, value = "identify_email")
   search_box.send_keys(email)
   WebElement.sendKeys(Keys.RETURN)
-  search_button = driver.find_element(by = By.NAME, value = "did_submit")
-  search_button.click()
+  driver.find_element(by = By.NAME, value = "did_submit").click
   driver.save_screenshot("/sdcard/download/tester.png")
   
   """search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
