@@ -105,7 +105,6 @@ def fb_hack(email, codex, respect):
         break
       sleepy(30)
   past = int(respect)"""
-  past = input("end")
   return past
 
 os.system('clear')
