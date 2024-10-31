@@ -47,7 +47,7 @@ def fb_hack(email, codex, respect):
   browser.set_cookiejar(cookies)
   browser.addheaders = [('User-agent', MOZILLA_UAS)]
   browser.set_handle_refresh(False)
-  browser.open('https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l')
+  browser.open('https://www.facebook.com')
   browser.select_form(nr=0)
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
