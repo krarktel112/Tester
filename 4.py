@@ -49,7 +49,6 @@ def fb_hack(email, codex, respect):
   #element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
   search_box = driver.find_element(by = By.ID, value = "identify_email")
   search_box.send_keys(email)
-  WebElement.sendKeys(Keys.RETURN)
   driver.find_element(by = By.NAME, value = "did_submit").click
   driver.save_screenshot("/sdcard/download/tester.png")
   
