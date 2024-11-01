@@ -53,10 +53,13 @@ def fb_hack(email, codex, respect):
   browser.set_handle_refresh(False)
   browser.open('http://m.facebook.com/login.php')
   browser.select_form(nr=0)
+  browser.select_form(nr=0)
   #response1 = browser.response()
   #soup = BeautifulSoup(response1, 'html.parser')
   #mobile = soup.find(string=re.compile("mobile"))
-  browser.select_form(predicate=select_form)
+  forms = list(br.forms())
+  form = forms[0]
+  print(form)
   #browser.form['email'] = email
   #browser.submit()
   response1 = browser.response()
