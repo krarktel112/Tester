@@ -1,3 +1,4 @@
+from mechanize import Browser, FormNotFoundError
 from time import sleep
 from bs4 import BeautifulSoup
 import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl, shutil
