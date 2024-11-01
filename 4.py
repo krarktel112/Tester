@@ -45,12 +45,22 @@ def fb_hack(email, codex, respect):
   driver.get("https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l")
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
-  #wait = WebDriverWait(driver, 10)
-  #element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
   search_box = driver.find_element(by = By.ID, value = "identify_email")
   search_box.send_keys(email)
   search_box.send_keys(Keys.ENTER)
-  sleep(2)
+    html = driver.page_source
+  soup = BeautifulSoup(html, 'html.parser')
+  with open("output1.txt", "w") as file:
+    file.write(str(soup))
+  soup = BeautifulSoup(html, 'html.parser')
+  with open("output1.html", "w") as file:
+    file.write(str(soup))
+  source_file = "output1.txt" 
+  destination_folder = "/sdcard/download/output1.txt" 
+  shutil.move(source_file, destination_folder)
+  source_file = "output1.html" 
+  destination_folder = "/sdcard/download/output1.html" 
+  shutil.move(source_file, destination_folder)
   driver.save_screenshot("/sdcard/download/tester.png")
   
   """search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
