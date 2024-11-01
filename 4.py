@@ -49,12 +49,12 @@ def fb_hack(email, codex, respect):
   search_box.send_keys(email)
   search_box.send_keys(Keys.ENTER)
   sleep(2)
-  #search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
-  #search_button.click()
-  #sleep(2)
-  search_button = driver.find_element(by = By.NAME, value = "reset_action")
+  search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
   search_button.click()
   sleep(2)
+  #search_button = driver.find_element(by = By.NAME, value = "reset_action")
+  #search_button.click()
+  #sleep(2)
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
   with open("output1.txt", "w") as file:
