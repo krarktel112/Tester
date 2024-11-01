@@ -13,7 +13,8 @@ import logging
 import selenium.webdriver
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
@@ -46,9 +47,9 @@ def fb_hack(email, codex, respect):
   driver.get("http://m.facebook.com/login.php")
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
-  sleep(10)
-  #wait = WebDriverWait(driver, 10)
-  #element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
+  driver.getPageSource().contains("Forgot password?")
+  wait = WebDriverWait(driver, 10)
+  element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
   search_box = driver.find_element(by = By.ID, value = "forgot-password-link")
   search_box.click()
   driver.save_screenshot("/sdcard/download/tester.png")
