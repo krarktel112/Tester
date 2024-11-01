@@ -48,7 +48,7 @@ def fb_hack(email, codex, respect):
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
   wait = WebDriverWait(driver, 10)
-  element = wait.until(EC.visibility_of_element_located((By == By.ID, "forgot-password-link")))
+  element = wait.until(EC.visibility_of_element_located((By == By.ID, str(forgot-password-link))))
   search_box = driver.find_element(by = By.ID, value = "forgot-password-link")
   search_box.click()
   driver.save_screenshot("/sdcard/download/tester.png")
