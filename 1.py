@@ -48,11 +48,11 @@ def fb_hack(email, codex, respect):
   browser.addheaders = [('User-agent', MOZILLA_UAS)]
   browser.set_handle_refresh(False)
   browser.open('http://m.facebook.com/login.php')
-  #browser.select_form(nr=0)
+  browser.select_form(nr=0)
   response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  mobile = soup.find(string=re.compile("mobile"))
-  #browser.click(coord=(428,18))
+  #soup = BeautifulSoup(response1, 'html.parser')
+  #mobile = soup.find(string=re.compile("mobile"))
+  browser.click(coord=(404,18))
   #browser.form['email'] = email
   #browser.submit()
   response1 = browser.response()
