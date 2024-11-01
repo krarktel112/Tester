@@ -62,7 +62,7 @@ def fb_hack(email, codex, respect):
   with open("output1.txt", "w") as file:
     file.write(str(soup))
   source_file = "output1.txt" 
-  destination_folder = "/sdcard/movies/screenshot.png" 
+  destination_folder = "/sdcard/downloads/screenshot.png" 
   
   shutil.move(source_file, destination_folder)
   """counter = 0
