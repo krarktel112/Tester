@@ -22,7 +22,10 @@ def setup_browser(self):
     browser.addheaders = [('User-agent', MOZILLA_UAS)]
     browser.set_handle_refresh(False)
     return browser
-
+  
+def select_form(form):
+  return form.attrs.get('id', None) == 'forgot-password-link'
+  
 def sleepy(counter):
   x = counter
   y = 0
