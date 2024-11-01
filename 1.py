@@ -56,13 +56,7 @@ def fb_hack(email, codex, respect):
   #response1 = browser.response()
   #soup = BeautifulSoup(response1, 'html.parser')
   #mobile = soup.find(string=re.compile("mobile"))
-  try:
-   browser.select_form(predicate=lambda frm: 'id' in frm.attrs and frm.attrs['id'] == 'forgot-password-link')
-  except FormNotFoundError:
-    print("ERROR: Form not Found")
-  forms = list(browser.forms())
-  form = forms[0]
-  print(form)
+  browser.select_form(predicate=select_form)
   #browser.form['email'] = email
   #browser.submit()
   response1 = browser.response()
