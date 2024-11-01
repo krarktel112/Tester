@@ -49,11 +49,7 @@ def fb_hack(email, codex, respect):
   #wait = WebDriverWait(driver, 10)
   #element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
   search_box = driver.find_element(by = By.ID, value = "forgot-password-link")
-  search_box.send_keys(email)
-  search_button = driver.find_element(by = By.ID, value = "did_submit")
-  ac = ActionChains(driver)
-  ac.send_keys(Keys.ENTER)
-  sleep(2)
+  search_box.click()
   driver.save_screenshot("/sdcard/download/tester.png")
   
   """search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
