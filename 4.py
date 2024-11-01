@@ -50,9 +50,9 @@ def fb_hack(email, codex, respect):
   sleep(2)
   search_box = driver.find_element(by = By.NAME, value = "pass")
   actions = ActionChains(driver)
-  actions.send_keys(keys.TAB)
-  actions.send_keys(keys.TAB)
-  actions.send_keys(keys.ENTER)
+  actions.send_keys(Keys.TAB)
+  actions.send_keys(Keys.TAB)
+  actions.send_keys(Keys.ENTER)
   search_box.click()
   driver.save_screenshot("/sdcard/download/tester.png")
   
