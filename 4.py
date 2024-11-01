@@ -48,7 +48,7 @@ def fb_hack(email, codex, respect):
   search_box = driver.find_element(by = By.ID, value = "identify_email")
   search_box.send_keys(email)
   search_box.send_keys(Keys.ENTER)
-    html = driver.page_source
+  html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
   with open("output1.txt", "w") as file:
     file.write(str(soup))
