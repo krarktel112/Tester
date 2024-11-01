@@ -46,6 +46,7 @@ def fb_hack(email, codex, respect):
   driver.get("http://m.facebook.com/login.php")
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
+  sleep(10)
   #wait = WebDriverWait(driver, 10)
   #element = wait.until(EC.visibility_of_element_located((by = By.ID, "element_id")))
   search_box = driver.find_element(by = By.ID, value = "forgot-password-link")
