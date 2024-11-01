@@ -43,7 +43,7 @@ def fb_hack(email, codex, respect):
   options.add_argument("--disable-dev-shm-usage")
   options.add_argument("--headless=new")
   driver = webdriver.Chrome(options=options)
-  driver.get("https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l")
+  driver.get("https://m.facebook.com")
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
   #wait = WebDriverWait(driver, 10)
