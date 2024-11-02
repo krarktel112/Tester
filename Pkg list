@@ -5,6 +5,7 @@ pip install mechanize
 pip install requests
 apt install git openssh
 termux-setup-storage
+yes | pkg update -y && yes | pkg upgrade -y
 pip install selenium==4.9.1
 yes | pkg install x11-repo -y
 yes | pkg install tur-repo -y
