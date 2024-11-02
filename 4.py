@@ -49,7 +49,7 @@ def fb_hack(email, codex, respect):
   search_box.send_keys(email)
   search_box.send_keys(Keys.ENTER)
   sleep(2)
-  #search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
+  search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
   search_button.click()
   sleep(2)
   search_button = driver.find_element(by = By.NAME, value = "reset_action")
