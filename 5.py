@@ -81,13 +81,7 @@ def fb_hack(email, codex, respect):
         soup = BeautifulSoup(html, 'html.parser')
         with open("output1.html", "w") as file:
           file.write(str(soup))
-        source_file = "output1.txt" 
-        destination_folder = "/sdcard/download/output1.txt" 
-        shutil.move(source_file, destination_folder)
-        source_file = "output1.html" 
-        destination_folder = "/sdcard/download/output1.html" 
-        shutil.move(source_file, destination_folder)
-        driver.save_screenshot("/sdcard/download/tester.png")
+        driver.save_screenshot("tester.png")
       could = int(counter)
       code1 = (str(could), str(p), "failed")
       code2 = (str(could), str(p), "check")
