@@ -11,6 +11,7 @@ capabilities = dict(
     language='en',
     locale='US'
 )
+WebDriver driver;
 options = webdriver.ChromeOptions()
 options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
