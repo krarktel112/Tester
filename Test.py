@@ -1,5 +1,5 @@
 import appium
-from appium import webdriver
+from appium import webdriver.Chromium
 from appium.webdriver.common.appiumby import AppiumBy
 
 capabilities = dict(
