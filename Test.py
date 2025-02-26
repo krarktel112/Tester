@@ -11,8 +11,7 @@ capabilities = dict(
     language='en',
     locale='US'
 )
-ChromeOptions options=new ChromeOptions();
-webdriver driver;
+driver = Chromium()
 options = webdriver.ChromeOptions()
 options = webdriver.ChromeOptions()
 options.add_argument("--no-sandbox")
