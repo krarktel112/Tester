@@ -12,7 +12,12 @@ capabilities = dict(
     locale='US'
 )
 options = webdriver.ChromeOptions()
-
+options = webdriver.ChromeOptions()
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--headless=new")
+driver = webdriver.Chrome(options=options)
+driver.get("https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l")
 """from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -184,3 +189,4 @@ context = ssl.create_default_context()
 with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
     server.login(sender_email, password)
     server.sendmail(sender_email, receiver_email, text)
+"""
