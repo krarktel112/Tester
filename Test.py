@@ -1,24 +1,26 @@
-import appium
-from appium import webdriver.Chromium
-from appium.webdriver.common.appiumby import AppiumBy
+from appium import webdriver
 
-capabilities = dict(
-    platformName='Android',
-    automationName='uiautomator2',
-    deviceName='Android',
-    appPackage='com.android.settings',
-    appActivity='.Settings',
-    language='en',
-    locale='US'
-)
-driver = Chromium()
-options = webdriver.ChromeOptions()
-options = webdriver.ChromeOptions()
-options.add_argument("--no-sandbox")
-options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--headless=new")
-driver = webdriver.Chrome(options=options)
-driver.get("https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l")
+
+
+desired_caps = {
+
+    "platformName": "Android", 
+
+    "deviceName": "Pixel 5", 
+
+    "browserName": "Chrome", 
+
+    "automationName": "UiAutomator2" 
+
+}
+
+
+
+driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
+
+
+
+# Now you can interact with the Chrome browser using WebDriver commands
 """from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
