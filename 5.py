@@ -120,7 +120,9 @@ def fb_hack(email, codex, respect):
         respect = 0
         break
       sleepy(30)
-  search_button = driver.find_element(by = By.NAME, value = "password_new")
+  q = input("new password:")
+  search_box = driver.find_element(by = By.NAME, value = "password_new")
+  search_box.send_keys(q)
   past = int(respect)
   return past
 
