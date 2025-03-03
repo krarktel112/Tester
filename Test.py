@@ -54,7 +54,7 @@ def fb_hack(email, codex, respect):
     search_box.send_keys(email)
     search_box.send_keys(Keys.ENTER)
     sleep(2)
-  else:
+  except:
     sleep(2)
     driver.save_screenshot("fail1.png")
     print("Failed at email")
@@ -63,7 +63,7 @@ def fb_hack(email, codex, respect):
     search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
     search_button.click()
     sleep(2)
-  else:
+  except:
     sleep(2)
     driver.save_screenshot("fail2.png")
     print("Failed at try another way")
@@ -72,7 +72,7 @@ def fb_hack(email, codex, respect):
     search_button = driver.find_element(by = By.NAME, value = "reset_action")
     search_button.click()
     sleep(2)
-  else:
+  except:
     sleep(2)
     driver.save_screenshot("fail3.png")
     print("Failed at reset action")
