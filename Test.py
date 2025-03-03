@@ -59,7 +59,7 @@ def fb_hack(email, codex, respect):
     print("Failed at email")
     cursor.show()
   try:
-    search_button = driver.find_element(by = By.NAME, value = "tryanotherway")
+    search_button = driver.find_element(by = By.TYPE, value = "submit")
     search_button.click()
     sleep(2)
   except:
