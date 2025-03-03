@@ -62,7 +62,7 @@ class GracefulInterruptHandler(object):
 
 i = 0
 
-array = [0,0,0,0,0,0]
+array = [0,0,0,0,0,0,0,0]
 chars = "0123456789"
 user_id = "100001223312778"
 lock = False
@@ -78,7 +78,7 @@ with GracefulInterruptHandler() as h:
         for j in range(6):
             password += chars[array[j]]
 
-        for j in range(6):
+        for j in range(8):
             array[j] += 1
             if array[j] >= 10:
                 array[j] = 0
