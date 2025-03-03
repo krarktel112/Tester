@@ -40,7 +40,6 @@ def sleepy(counter):
 def fb_hack(email, codex, respect):
   os.system('clear')
   soup = BeautifulSoup()
-  cursor.hide()
   options = webdriver.ChromeOptions()
   options.add_argument("--no-sandbox")
   options.add_argument("--disable-dev-shm-usage")
