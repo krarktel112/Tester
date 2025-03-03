@@ -1,9 +1,25 @@
 #! /usr/bin/python
+# Now you can interact with the Chrome browser using WebDriver commands
+from selenium.webdriver import Keys, ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+from time import sleep
+from bs4 import BeautifulSoup
+import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl, selenium, shutil
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import logging
+import selenium.webdriver
+from selenium import webdriver
 
 
+MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
+              'AppleWebKit/534.7 (KHTML, like Gecko) ' \
+              'Chrome/7.0.517.41 Safari/534.7' 
 import signal
-import requests
-import sys
 
 
 def signal_handler(sig, frame):
@@ -83,26 +99,7 @@ with GracefulInterruptHandler() as h:
         if h.interrupted:
             break
 
-# Now you can interact with the Chrome browser using WebDriver commands
-"""from selenium.webdriver import Keys, ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium import webdriver
-from time import sleep
-from bs4 import BeautifulSoup
-import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl, selenium, shutil
-from email import encoders
-from email.mime.base import MIMEBase
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-import logging
-import selenium.webdriver
-from selenium import webdriver
 
-
-MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
-              'AppleWebKit/534.7 (KHTML, like Gecko) ' \
-              'Chrome/7.0.517.41 Safari/534.7' 
 
 def sleepy(counter):
   x = counter
