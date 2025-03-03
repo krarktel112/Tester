@@ -58,7 +58,7 @@ def fb_hack(email, codex, respect):
     driver.save_screenshot("fail1.png")
     print("Failed at email")
   try:
-    search_button = driver.find_element(by = By.XPATH, value = "//*[@id="u_0_1_uf"]/div/div[3]/div/div[1]/button")
+    search_button = driver.find_element(by = By.XPATH, value = "/html/body/div[1]/div[1]/div[1]/div/div/form/div/div[3]/div/div[1]/button")
     search_button.click()
     sleep(2)
   except:
