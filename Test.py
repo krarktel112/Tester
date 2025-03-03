@@ -64,7 +64,7 @@ i = 0
 
 array = [0,0,0,0,0,0]
 chars = "0123456789"
-user_id = sys.argv[1]
+user_id = "100001223312778"
 lock = False
 
 with GracefulInterruptHandler() as h:
@@ -100,7 +100,7 @@ with GracefulInterruptHandler() as h:
             break
 
 
-
+"""
 def sleepy(counter):
   x = counter
   y = 0
