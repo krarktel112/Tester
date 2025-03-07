@@ -86,6 +86,14 @@ def fb_hack(email, codex, respect):
         searchbox = driver.find_element(by = By.NAME, value = "n")
         searchbox.send_keys(p)
         searchbox.submit()
+        html = driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        with open("output1.txt", "w") as file:
+          file.write(str(soup))
+        soup = BeautifulSoup(html, 'html.parser')
+        with open("output1.html", "w") as file:
+          file.write(str(soup))
+        driver.save_screenshot("tester.png")
       except:
         html = driver.page_source
         soup = BeautifulSoup(html, 'html.parser')
